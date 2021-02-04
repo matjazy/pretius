@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mateuszjazy.SystemHandlerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-02-04T18:28:39" hostname="PF1NB4XG" time="0.005">
+<testsuite name="com.mateuszjazy.SystemHandlerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-02-04T18:38:58" hostname="PF1NB4XG" time="0.009">
   <properties/>
-  <testcase name="testDirectoriesGeneration" classname="com.mateuszjazy.SystemHandlerTest" time="0.005">
-    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:98)
-	at java.base/sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
-	at java.base/sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
-	at java.base/sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:229)
-	at java.base/java.nio.file.Path.of(Path.java:147)
+  <testcase name="testDirectoriesGeneration" classname="com.mateuszjazy.SystemHandlerTest" time="0.009">
+    <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
 	at com.mateuszjazy.SystemHandlerTest.testDirectoriesGeneration(SystemHandlerTest.java:16)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

@@ -6,13 +6,13 @@ import java.nio.file.Paths;
 
 public class SystemHandler {
 
-    private static final String ROOT = System.getProperty("user.dir");
+    private static final String ROOT_PATH = System.getProperty("user.dir");
     private static final String HOME_PATH = "/HOME";
     private static final String DEV_PATH = "/DEV";
     private static final String TEST_PATH = "/TEST";
     private static final String COUNT_FILE_PATH = HOME_PATH + "/count.txt";
 
-    public void generateDirectories(){
+    public void generateDirectoriesIfNotExists(){
         try {
             generateHomeIfNotExists();
             generateDevIfNotExists();
@@ -34,10 +34,10 @@ public class SystemHandler {
         return TEST_PATH;
     }
 
-    public void generateCountFile(){
-        if (Files.notExists(Paths.get(ROOT + HOME_PATH + "/count.txt"))) {
+    public void generateCountFileIfNotExists(){
+        if (Files.notExists(Paths.get(ROOT_PATH + HOME_PATH + "/count.txt"))) {
             try {
-                Files.createFile(Paths.get(ROOT + HOME_PATH + "/count.txt"));
+                Files.createFile(Paths.get(ROOT_PATH + HOME_PATH + "/count.txt"));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
@@ -50,20 +50,20 @@ public class SystemHandler {
 
 
     private void generateHomeIfNotExists() throws IOException {
-        if (Files.notExists(Paths.get(ROOT + HOME_PATH))) {
-            Files.createDirectory(Paths.get(ROOT + HOME_PATH));
+        if (Files.notExists(Paths.get(ROOT_PATH + HOME_PATH))) {
+            Files.createDirectory(Paths.get(ROOT_PATH + HOME_PATH));
         }
     }
 
     private void generateDevIfNotExists() throws IOException{
-        if (Files.notExists(Paths.get(ROOT + DEV_PATH))) {
-            Files.createDirectory(Paths.get(ROOT + DEV_PATH));
+        if (Files.notExists(Paths.get(ROOT_PATH + DEV_PATH))) {
+            Files.createDirectory(Paths.get(ROOT_PATH + DEV_PATH));
         }
     }
 
     private void generateTestIfNotExists() throws IOException{
-        if (Files.notExists(Paths.get(ROOT + TEST_PATH))) {
-            Files.createDirectory(Paths.get(ROOT + TEST_PATH));
+        if (Files.notExists(Paths.get(ROOT_PATH + TEST_PATH))) {
+            Files.createDirectory(Paths.get(ROOT_PATH + TEST_PATH));
         }
     }
 }

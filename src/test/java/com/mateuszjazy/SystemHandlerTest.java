@@ -18,4 +18,11 @@ public class SystemHandlerTest {
         assertTrue(Files.exists(Path.of(System.getProperty("user.dir")+Path.of(systemHandler.getTestPath()))));
     }
 
+    @Test
+    public void testGenerateCountFile(){
+        SystemHandler systemHandler = new SystemHandler();
+        systemHandler.generateCountFile();
+        assertTrue(Files.exists(Path.of(System.getProperty("user.dir")+Path.of(systemHandler.getCountFilePath()))));
+    }
+
 }

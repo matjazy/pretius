@@ -33,6 +33,15 @@ public class SystemHandler {
         return TEST_PATH;
     }
 
+    public void generateCountFile(){
+
+    }
+
+    public String getCountFilePath(){
+        return null;
+    }
+
+
     private void generateHomeIfNotExists() throws IOException {
         if (Files.notExists(Paths.get(ROOT + HOME_PATH))) {
             Files.createDirectory(Paths.get(ROOT + HOME_PATH));

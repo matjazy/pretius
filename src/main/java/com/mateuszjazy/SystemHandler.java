@@ -10,6 +10,7 @@ public class SystemHandler {
     private static final String HOME_PATH = "/HOME";
     private static final String DEV_PATH = "/DEV";
     private static final String TEST_PATH = "/TEST";
+    private static final String COUNT_FILE_PATH = HOME_PATH + "/count.txt";
 
     public void generateDirectories(){
         try {
@@ -34,11 +35,17 @@ public class SystemHandler {
     }
 
     public void generateCountFile(){
-
+        if (Files.notExists(Paths.get(ROOT + HOME_PATH + "/count.txt"))) {
+            try {
+                Files.createFile(Paths.get(ROOT + HOME_PATH + "/count.txt"));
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        }
     }
 
     public String getCountFilePath(){
-        return null;
+        return COUNT_FILE_PATH;
     }
 
 
